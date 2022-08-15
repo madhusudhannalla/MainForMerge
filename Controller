@@ -24,10 +24,20 @@ public class SOPControllerClass{
 	
 	@Mock
 	private  SopFactory sopFactory;
+
 	
      @Test
      hai
 
+
+	@Test
+	public void sop throws TemplateException, IOException {
+		ConfirmBookingRe reqVO=new ConfirmBookingReqVO();
+		reqVO.seopBookingId("10010");
+		RespoeEntity<String> confirmSOPBookings = sopController.confirmSOPBookings(reqVO);
+		when(sFactory.confirmSOPBookings(reqVO)).thenReturn(confirmSOPBookings.getBody());
+	}
+	@Test
 	public void SOPControllerTest() throws TemplateException, IOException {
 		ConfirmBookingReqVO reqVO=new ConfirmBookingReqVO();
 		reqVO.setSopBookingId("10010");
