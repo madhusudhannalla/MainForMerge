@@ -1,0 +1,7 @@
+     @Test
+	public void SOPControllerTest() throws TemplateException, IOException {
+		ConfirmBookingReqVO reqVO=new ConfirmBookingReqVO();
+		reqVO.setSopBookingId("10010");
+		ResponseEntity<String> confirmSOPBookings = sopController.confirmSOPBookings(reqVO);
+		when(sopFactory.confirmSOPBookings(reqVO)).thenReturn(confirmSOPBookings.getBody());
+	}
