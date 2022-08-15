@@ -1,4 +1,5 @@
      @Test
+     hai
 	public void SOPControllerTest() throws TemplateException, IOException {
 		ConfirmBookingReqVO reqVO=new ConfirmBookingReqVO();
 		reqVO.setSopBookingId("10010");
