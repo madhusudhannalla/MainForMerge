@@ -1,11 +1,51 @@
+import static org.mockito.Mockito.when;
+
+import java.io.IOException;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
+
+import com.sh.api.sop.exp.controller.SopController;
+import com.sh.api.sop.exp.factory.SopFactory;
+import com.sh.api.sop.sys.gateway.vo.ConfirmBookingReqVO;
+
+import freemarker.template.TemplateException;
+
+@SpringBootConfiguration
+@SpringBootTest(classes=SOPControllerClass.class)
+public class SOPControllerClass{
+
+	@InjectMocks
+	private SopController sopController;
+	
+	@Mock
+	private  SopFactory sopFactory;
+
+	
      @Test
      hai
+
+
+	@Test
+	public void sop throws TemplateException, IOException {
+		ConfirmBookingRe reqVO=new ConfirmBookingReqVO();
+		reqVO.seopBookingId("10010");
+		RespoeEntity<String> confirmSOPBookings = sopController.confirmSOPBookings(reqVO);
+		when(sFactory.confirmSOPBookings(reqVO)).thenReturn(confirmSOPBookings.getBody());
+	}
+	@Test
 	public void SOPControllerTest() throws TemplateException, IOException {
 		ConfirmBookingReqVO reqVO=new ConfirmBookingReqVO();
 		reqVO.setSopBookingId("10010");
 		ResponseEntity<String> confirmSOPBookings = sopController.confirmSOPBookings(reqVO);
 		when(sopFactory.confirmSOPBookings(reqVO)).thenReturn(confirmSOPBookings.getBody());
 	}
+}
+
 	
 	dfghjkl
 	dfgh
@@ -14,3 +54,4 @@
 	hgv 
 	rfgbhb
 	dc 
+
